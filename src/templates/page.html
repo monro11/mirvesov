@@ -1,0 +1,52 @@
+---
+title: Index page
+posts:
+ - img: vagar_bg.jpg
+   logo: vagarlogo.png
+   link: vagar.html
+ - img: zemicusa_bg.jpg
+   logo: zemicusalogo.svg
+   link: zemicusa.html
+ - img: mirvesov_bg.jpg
+   logo: mirvesovlogo.png
+   link: mirvesov.html
+ - img: tenzomir_bg.jpg
+   logo: tenzomirlogo.png
+   link: tenzomir.html
+ - img: zemic_bg.jpg
+   logo: zemicualogo.svg
+   link: zemic.html
+
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<!-- begin barba content -->
+	<div id="barba-wrapper">
+	  <div class="barba-container" data-namespace="List">
+
+		<!-- begin items -->
+		<div class="items">
+			{% for post in posts %}
+				<!-- begin item -->
+				<a href="{{post.link}}" class="item">
+					<div class="item__bg" style="background-image: url(img/{{post.img}})">
+						
+					</div>
+     <span class="item__title">
+      <img src="img/{{post.logo}}" class="item__logoimg">
+     </span>
+				</a>
+				<!-- end item -->
+			{% endfor %}
+			
+		</div>
+		<!-- end items -->
+
+  {#{% include "partials/_footer.html" %}#}
+	  </div>
+	</div>
+	<!-- end barba.js -->
+
+
+{% endblock%}
